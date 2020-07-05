@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Educational registration form</title>
+    <link rel="stylesheet" href="courseracourse.css">
+     <script>
+      function checkFirstName(){
+      var fname= document.getElementById("first").value;
+      var regx=/^[A-Z\a-z\s\'\-]{2,15}$/;
+      if(regx.test(fname)){
+          document.getElementById("firstValue").style.color="green";
+          document.getElementById("firstValue").innerHTML="valid";
+          return true;
+        }
+        else{
+          document.getElementById("firstValue").innerHTML=" Only 2-15 characters allowed";
+          document.getElementById("firstValue").style.color="red";
+          return false;
+        }
+        }
+        function checkSecondName(){
+      var sname= document.getElementById("second").value;
+      var regx=/^[A-Z\a-z\s\'\-]{2,15}$/;
+      if(regx.test(sname)){
+          document.getElementById("secondValue").style.color="green";
+          document.getElementById("secondValue").innerHTML="valid";
+          return true;
+        }
+        else{
+          document.getElementById("secondValue").innerHTML=" Only 2-15 characters allowed";
+          document.getElementById("secondValue").style.color="red";
+          return false;
+        }
+        }
+        function checkPhoneNumber(){
+      var num= document.getElementById("phoneNumber").value;
+      var regx=/^\d{9}$/;
+      if(regx.test(num)){
+          document.getElementById("numberValue").style.color="green";
+          document.getElementById("numberValue").innerHTML="valid";
+          return true;
+        }
+        else{
+          document.getElementById("numberValue").innerHTML="enter 9 digit number";
+          document.getElementById("numberValue").style.color="red";
+          return false;
+        }
+        }
+        function checkPassword(){
+      var pass1= document.getElementById("pass1").value;
+      var pass2=document.getElementById("pass2").value;
+      if(pass1!=pass2){
+          document.getElementById("passwordValue").innerHTML="Passwords dont match";
+          document.getElementById("passwordValue").style.color="red";
+          return false;
+        }
+        else{
+            document.getElementById("passwordValue").innerHTML=" ";
+        }
+        }
+     </script>
+  </head>
+  <body>
+    <div class="main-block">
+        <h1>Register to our courses</h1>
+        <p>We provide free learning materials for programming languages like HTML, CSS, Java Script, PHP etc.</p><br><br>
+      <div class="cont">
+      <form action="courseracourse.html">
+          <h2 class="title">Register here</h2>
+        <div class="info">
+          <input type="text"  placeholder="First name" id="first" onblur="checkFirstName();"/><span id="firstValue"> </span>
+          <input type="text"  placeholder="Second name" id="second" onblur="checkSecondName();"/><span id="secondValue"> </span>
+          <input type="Email"  placeholder="Email"/><span> </span>
+          <input type="Phone"  placeholder="Phone number"id="phoneNumber" onblur="checkPhoneNumber();"/> <span id="numberValue"> </span>
+          <input type="password"  placeholder="Password" id="pass1"/><span> </span>
+          <input type="password"  placeholder="Corfirm Password" id="pass2" onblur="checkPassword();"/><span id="passwordValue"> </span>
+          <select><span>Hello</span>
+            <option value="short-courses">Short courses</option>
+            <option value="featured-courses" selected>Featured courses</option>
+            <option value="undergraduate">Undergraduate</option>
+            <option value="diploma">Diploma</option>
+            <option value="certificate">Certificate</option>
+            <option value="masters-degree">Masters degree</option>
+            <option value="postgraduate">Postgraduate</option>
+          </select>
+        </div>
+        
+          <input type="checkbox" name="checkbox" required><span>I agree to the Privacy Policy.</span>
+          <button>GO</button>
+      </form>
+    </div>
+    </div>
+  </body>
+</html>
